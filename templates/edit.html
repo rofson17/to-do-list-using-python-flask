@@ -1,0 +1,27 @@
+{% extends 'layout.html'%}
+{% block body %}
+<h2 class="text-center my-5">Update your Note</h2>
+
+<div class="container mb-5">
+  <div class="row gy-5">
+    
+    <div class="col-lg-6 col-sm-12  order-md-1 order-2 gy-4  px-5 pt-5">
+      <form action="/edit/{{card_edit.id}}" method="post">
+        <div class="mb-3">
+          <input type="text" class="form-control" name="tittle" placeholder="Subject" value="{{card_edit.tittle}}">
+        </div>
+        <div class="mb-4">
+          <textarea placeholder="Note" class="form-control" rows="10" name="note">{{card_edit.Note}}</textarea>
+        </div>
+        <button class="btn btn-primary">Note it</button>
+      </form>
+    </div>
+
+    <div class="col-lg-6 col-sm-12 order-1 order-md-2 gy-4">
+      <img src="{{url_for('static', filename='note_book.jpg')}}" alt="notebook image" class="img-fluid"
+        style="border-radius: 4rem;">
+    </div>
+
+  </div>
+</div>
+{% endblock %}
